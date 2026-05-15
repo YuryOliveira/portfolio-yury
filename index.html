@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yury de Oliveira</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+
+    <nav>
+        <h2>Yury Oliveira</h2>
+        <button id="btnTema">Modo Escuro</button>
+    </nav>
+
+    <div class="hero-content">
+
+        <div class="perfil">
+
+            <div class="foto">
+                <img src="Foto Yury.jpeg" alt="Foto Yury">
+            </div>
+
+            <h1>Yury Oliveira</h1>
+
+            <p>
+                Desenvolvedor em formação | Ciência da Computação
+            </p>
+
+        </div>
+
+        <div class="hero-card">
+
+            <h2>Desenvolvedor Full Stack</h2>
+
+            <p>
+                Desenvolvimento de interfaces modernas,
+                aplicações web e experiências interativas
+                utilizando HTML, CSS, JavaScript e PHP.
+            </p>
+
+            <a href="#contato">
+                Entrar em contato
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+<main>
+
+    <section>
+
+        <h2>Quem sou eu</h2>
+
+        <p>
+            Sou estudante de Ciência da Computação com domínio de
+            configuração de hardware e software, destacando-se pela
+            atenção aos detalhes em projetos de programação.
+
+            Demonstra aptidão para trabalhar em equipe e flexibilidade
+            para lidar com mudanças.
+
+            Possui habilidade no uso do Pacote Office e familiaridade
+            com metodologias ágeis, como Scrum e Kanban.
+
+            Conhecimentos em C, Python, PHP, HTML, CSS,
+            JavaScript, Flutter e Dart.
+        </p>
+
+    </section>
+
+    <section>
+
+        <h2>Meus projetos</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Site institucional</h3>
+
+                <p>
+                    Projeto desenvolvido utilizando HTML e CSS.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Sistema de cadastro</h3>
+
+                <p>
+                    Aplicação web com organização de dados
+                    e formulários dinâmicos.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Website interativo</h3>
+
+                <p>
+                    Projeto moderno utilizando JavaScript,
+                    manipulação DOM e PHP.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="experiencias">
+
+        <h2>Minhas experiências</h2>
+
+        <ul id="listaExperiencias">
+
+            <li>Criação de páginas com HTML semântico.</li>
+
+            <li>Estilização de interfaces com CSS.</li>
+
+            <li>Desenvolvimento de formulários web.</li>
+
+        </ul>
+
+        <button id="btnExperiencia">
+            Adicionar nova experiência
+        </button>
+
+    </section>
+
+    <section id="contato">
+
+        <h2>Contato</h2>
+
+        <form id="formContato" action="processa.php" method="POST">
+
+            <input
+                type="text"
+                name="nome"
+                id="nome"
+                placeholder="Nome completo"
+            >
+
+            <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email"
+            >
+
+            <input
+                type="text"
+                name="telefone"
+                id="telefone"
+                placeholder="Telefone"
+            >
+
+            <select name="motivo" id="motivo">
+
+                <option value="">
+                    Motivo do contato
+                </option>
+
+                <option value="Parceria">
+                    Parceria
+                </option>
+
+                <option value="Trabalho">
+                    Trabalho
+                </option>
+
+                <option value="Dúvida">
+                    Dúvida
+                </option>
+
+                <option value="Projeto">
+                    Projeto
+                </option>
+
+            </select>
+
+            <div class="interesses">
+
+                <p>Áreas de interesse:</p>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        name="interesses[]"
+                        value="HTML"
+                    >
+                    HTML
+                </label>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        name="interesses[]"
+                        value="CSS"
+                    >
+                    CSS
+                </label>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        name="interesses[]"
+                        value="JavaScript"
+                    >
+                    JavaScript
+                </label>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        name="interesses[]"
+                        value="PHP"
+                    >
+                    PHP
+                </label>
+
+            </div>
+
+            <textarea
+                name="mensagem"
+                id="mensagem"
+                placeholder="Digite sua mensagem com no mínimo 20 caracteres"
+            ></textarea>
+
+            <p id="erro"></p>
+
+            <button type="submit">
+                Enviar mensagem
+            </button>
+
+        </form>
+
+    </section>
+
+</main>
+
+<section class="redes">
+
+    <h2>Minhas redes</h2>
+
+    <div class="social-buttons">
+
+        <a
+            href="https://www.instagram.com/yury_de_oliveira/"
+            target="_blank"
+            class="social-btn"
+        >
+            <img src="https://cdn-icons-png.flaticon.com/512/1077/1077042.png">
+        </a>
+
+        <a
+            href="https://wa.me/5519998246107"
+            target="_blank"
+            class="social-btn"
+        >
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384023.png">
+        </a>
+
+        <a
+            href="https://github.com/YuryOliveira"
+            target="_blank"
+            class="social-btn"
+        >
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png">
+        </a>
+
+        <a
+            href="https://www.linkedin.com/in/yury-oliveira-22b041281/"
+            target="_blank"
+            class="social-btn"
+        >
+            <img src="https://cdn-icons-png.flaticon.com/512/61/61109.png">
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+    <p id="dataHora"></p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
