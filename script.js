@@ -133,23 +133,19 @@ function mostrarDataHora() {
 
 // EASTER EGG RICKROLL
 
-const fotoPerfil = document.querySelector(".foto");
+const fotoPerfil = document.querySelector(".foto img");
 
 let contadorCliques = 0;
 
-fotoPerfil.addEventListener("click", () => {
+if (fotoPerfil) {
+    fotoPerfil.style.cursor = "pointer";
 
-    contadorCliques++;
+    fotoPerfil.addEventListener("click", function() {
+        contadorCliques++;
 
-    if (contadorCliques >= 10) {
-
-        window.open(
-            "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-            "_blank"
-        );
-
-        contadorCliques = 0;
-    }
-});
-
+        if (contadorCliques === 10) {
+            window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+        }
+    });
+}
 mostrarDataHora();
