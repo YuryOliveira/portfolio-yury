@@ -131,4 +131,25 @@ function mostrarDataHora() {
 
 }
 
+// EASTER EGG RICKROLL
+
+const fotoPerfil = document.querySelector(".foto");
+
+let contadorCliques = 0;
+
+fotoPerfil.addEventListener("click", () => {
+
+    contadorCliques++;
+
+    if (contadorCliques >= 10) {
+
+        window.open(
+            "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "_blank"
+        );
+
+        contadorCliques = 0;
+    }
+});
+
 mostrarDataHora();
