@@ -69,6 +69,8 @@ btnTema.addEventListener("click", function() {
 
     document.body.classList.toggle("tema-escuro");
 
+    document.body.classList.remove("tema-sakura");
+
     if (document.body.classList.contains("tema-escuro")) {
 
         localStorage.setItem("tema", "escuro");
@@ -80,35 +82,6 @@ btnTema.addEventListener("click", function() {
         btnTema.textContent = "Modo Escuro";
 
     }
-
-});
-
-document.getElementById("btnExperiencia").addEventListener("click", function() {
-
-    const experiencias = [
-
-        "Desenvolvimento de sistemas web.",
-        "Criação de interfaces responsivas.",
-        "Manipulação DOM com JavaScript.",
-        "Desenvolvimento backend com PHP.",
-        "Modelagem de banco de dados MySQL.",
-        "Criação de formulários interativos.",
-        "Criação de páginas com HTML e CSS.",
-        "Versionamento de código com GitHub."
-
-    ];
-
-    const lista = document.getElementById("listaExperiencias");
-
-    const novaExperiencia = document.createElement("li");
-
-    const indiceAleatorio =
-        Math.floor(Math.random() * experiencias.length);
-
-    novaExperiencia.textContent =
-        experiencias[indiceAleatorio];
-
-    lista.appendChild(novaExperiencia);
 
 });
 
@@ -131,21 +104,139 @@ function mostrarDataHora() {
 
 }
 
-// EASTER EGG RICKROLL
+/* EASTER EGG RICKROLL */
 
 const fotoPerfil = document.querySelector(".foto img");
 
-let contadorCliques = 0;
+let contadorRickRoll = 0;
 
 if (fotoPerfil) {
+
     fotoPerfil.style.cursor = "pointer";
 
-    fotoPerfil.addEventListener("click", function() {
-        contadorCliques++;
+    fotoPerfil.addEventListener("click", function(event) {
 
-        if (contadorCliques === 10) {
-            window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+        event.stopPropagation();
+
+        contadorRickRoll++;
+
+        if (contadorRickRoll >= 10) {
+
+            window.location.href =
+                "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+
+            contadorRickRoll = 0;
         }
     });
+}
+
+//* EASTER EGG SAKURA */
+
+const areaPerfil = document.querySelector(".perfil");
+
+let contadorSakura = 0;
+
+let sakuraAtivado = false;
+let sakuraFinalizado = false;
+
+if (areaPerfil) {
+
+    areaPerfil.style.cursor = "pointer";
+
+    areaPerfil.addEventListener("click", function() {
+
+        if (sakuraFinalizado) {
+            return;
+        }
+
+        if (sakuraAtivado) {
+
+            document.body.classList.remove("tema-sakura");
+
+            criarChuvaFerramentas();
+
+            sakuraAtivado = false;
+            sakuraFinalizado = true;
+
+            return;
+        }
+
+        contadorSakura++;
+
+        if (contadorSakura >= 5) {
+
+            document.body.classList.add("tema-sakura");
+
+            criarPetalas();
+
+            contadorSakura = 0;
+
+            sakuraAtivado = true;
+        }
+    });
+}
+
+function criarPetalas() {
+
+    const petalas = ["🌸", "💮", "🌺"];
+
+    for (let i = 0; i < 40; i++) {
+
+        const petala = document.createElement("div");
+
+        petala.classList.add("petala");
+
+        petala.textContent =
+            petalas[Math.floor(Math.random() * petalas.length)];
+
+        petala.style.left = Math.random() * 100 + "vw";
+
+        petala.style.animationDuration =
+            (Math.random() * 3 + 3) + "s";
+
+        petala.style.fontSize =
+            (Math.random() * 15 + 18) + "px";
+
+        petala.style.animationDelay =
+            Math.random() * 2 + "s";
+
+        document.body.appendChild(petala);
+
+        setTimeout(function() {
+            petala.remove();
+        }, 6000);
+    }
+}
+
+function criarChuvaFerramentas() {
+
+    const ferramentas = ["⛏️", "🗡️", "💎", "🟩", "🟫"];
+
+    for (let i = 0; i < 40; i++) {
+
+        const item = document.createElement("div");
+
+        item.classList.add("petala");
+
+        item.textContent =
+            ferramentas[Math.floor(Math.random() * ferramentas.length)];
+
+        item.style.left = Math.random() * 100 + "vw";
+
+        item.style.animationDuration =
+            (Math.random() * 3 + 3) + "s";
+
+        item.style.fontSize =
+            (Math.random() * 15 + 18) + "px";
+
+        item.style.animationDelay =
+            Math.random() * 2 + "s";
+
+        document.body.appendChild(item);
+
+        setTimeout(function() {
+            item.remove();
+        }, 6000);
+    }
 }
 mostrarDataHora();
